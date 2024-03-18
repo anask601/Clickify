@@ -9,7 +9,7 @@ import { NoteList } from "./components/NoteList";
 import { NoteLayout } from "./components/NoteLayout";
 import { Note } from "./components/Note";
 import { EditNote } from "./components/EditModal";
-
+import "./App.css";
 export type Note = {
   id: string;
 } & NoteData;
