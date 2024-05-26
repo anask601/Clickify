@@ -15,6 +15,7 @@ export type Note = {
 } & NoteData;
 
 export type RawNote = {
+  key?: string | number;
   id: string;
 } & RawNoteData;
 
@@ -31,6 +32,7 @@ export type NoteData = {
 };
 
 export type Tag = {
+  key?: string | number;
   id: string;
   label: string;
 };
