@@ -6,7 +6,7 @@ import { actions } from "../data/index";
 import LinkCard from "./LinkCard";
 import { v4 as uuidV4 } from "uuid";
 
-export function NoteList() {
+export function ActionList() {
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
   const [title, setTitle] = useState("");
 
