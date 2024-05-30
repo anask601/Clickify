@@ -1,3 +1,7 @@
+body {
+  background: #353535;
+  color: white;
+}
 .grid-container {
   display: grid;
   gap: 1.5rem;
@@ -7,4 +11,8 @@
   .grid-container {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+.select-container {
+  color: black;
 }

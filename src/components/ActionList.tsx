@@ -57,6 +57,7 @@ export function ActionList() {
             <Form.Group controlId="tags">
               <Form.Label>Tags</Form.Label>
               <ReactSelect
+                className="select-container"
                 value={selectedTags.map((tag) => {
                   return { label: tag.label, value: tag.id };
                 })}
