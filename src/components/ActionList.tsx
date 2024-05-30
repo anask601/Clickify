@@ -76,11 +76,11 @@ export function ActionList() {
           </Col>
         </Row>
       </Form>
-      <Row xs={1} sm={2} lg={3} xl={4} className="g-3">
+      <section className="grid-container">
         {filteredActions.map((action, index) => (
           <LinkCard key={`linkCard_${index}`} action={action} />
         ))}
-      </Row>
+      </section>
     </>
   );
 }
