@@ -72,6 +72,7 @@ export function ActionList() {
               <Form.Control
                 type="text"
                 value={title}
+                placeholder="search...🔎"
                 onChange={(e) => setTitle(e.target.value)}
               />
             </Form.Group>
