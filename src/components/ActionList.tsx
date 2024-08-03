@@ -6,19 +6,42 @@ import { actions } from "../data/index";
 import LinkCard from "./LinkCard";
 import { v4 as uuidV4 } from "uuid";
 
+type AvailableTag = {
+  id: string;
+  label: string;
+};
+
 export function ActionList() {
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
   const [title, setTitle] = useState("");
 
-  const availableTags = actions.flatMap(
-    (action) =>
-      action.tags?.map((tag) => ({
-        key: action.key,
-        id: uuidV4(),
-        label: tag,
-      })) || []
-  );
+  // const availableTags = actions.flatMap(
+  //   (action) =>
+  //     action.tags?.map((tag) => ({
+  //       key: action.key,
+  //       id: uuidV4(),
+  //       label: tag,
+  //     })) || []
+  // );
 
+  const availableTags = useMemo(() => {
+    const tagSet = new Set<string>();
+    const tagsArray: AvailableTag[] = [];
+
+    actions.forEach((action) => {
+      action.tags?.forEach((tag) => {
+        if (!tagSet.has(tag)) {
+          tagSet.add(tag);
+          tagsArray.push({
+            id: uuidV4(),
+            label: tag,
+          });
+        }
+      });
+    });
+
+    return tagsArray;
+  }, []);
   const filteredActions = useMemo(() => {
     return actions.filter((action) => {
       const matchesTitle =
